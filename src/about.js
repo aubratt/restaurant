@@ -22,7 +22,22 @@ export function showAbout() {
 
     const about = document.createElement("div");
     about.id = "about";
-    about.textContent = "ABOUT";
+
+    const aboutContent = document.createElement("div");
+    aboutContent.id = "about-content";
+
+    const aboutTitle = document.createElement("div");
+    aboutTitle.id = "about-title";
+    aboutTitle.textContent = "FLO'S V8 CAFE";
+
+    const aboutDesc = document.createElement("p");
+    aboutDesc.id = "about-desc";
+    aboutDesc.textContent = "Celebrate the pioneering spirit of the open road at Flo's V8 Cafe in Radiator Springs. Conveniently located on Route 66, Flo's has everything you need to refuel for your journey.";
+
+    aboutContent.appendChild(aboutTitle);
+    aboutContent.appendChild(aboutDesc);
+
+    about.appendChild(aboutContent);
 
     content.appendChild(about);
 }

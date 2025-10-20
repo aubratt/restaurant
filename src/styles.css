@@ -254,8 +254,26 @@ button:hover {
 /* About */
 
 #about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 600px;
+    min-width: 200px;
+}
+
+#about-content {
     border: 1px solid var(--retro-blue);
     border-radius: 8px;
+    width: 80%;
+    padding: 16px;
+    white-space: pre;
+}
+
+#about-title {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* END About */

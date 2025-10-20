@@ -1,9 +1,16 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { homepage, showHomepage } from "./homepage.js";
+import { menu, showMenu } from "./menu.js";
+import { about, showAbout } from "./about.js";
 
-console.log(greeting);
+showHomepage();
 
-const hello = document.createElement("p");
-hello.textContent = "hello";
+const flos = document.getElementById("flos");
+const homeBtn = document.getElementById("home-btn");
+const menuBtn = document.getElementById("menu-btn");
+const aboutBtn = document.getElementById("about-btn");
 
-document.body.appendChild(hello);
+flos.addEventListener("click", showHomepage);
+homeBtn.addEventListener("click", showHomepage);
+menuBtn.addEventListener("click", showMenu);
+aboutBtn.addEventListener("click", showAbout);

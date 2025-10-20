@@ -1,3 +1,261 @@
-body {
-    background-color: rebeccapurple;
+/* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* END CSS Reset */
+
+/* Imported Fonts */
+
+@font-face {
+    font-family: "Aurach";
+    src: url("AurachHeavy.woff2") format("woff2"), url("AurachHeavy.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Magneto";
+    src: url("Magneto-Bold.woff2") format("woff2"), url("Magneto-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* END Imported Fonts */
+
+/* Custom Vars */
+
+:root {
+    --bg: #1c272a;
+    --retro-blue: #00ccd0;
+    --retro-light-blue: #c8f5f7;
+}
+
+/* END Custom Vars */
+
+/* Body */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    background-color: var(--bg);
+    color: #c8f5f7;
+}
+
+/* END Body */
+
+/* Header */
+
+#flos {
+    font-family: "Magneto";
+    color: var(--retro-light-blue);
+    text-shadow: 0 0 7px var(--retro-light-blue), 0 0 10px var(--retro-light-blue), 0 0 21px var(--retro-light-blue), 0 0 42px var(--retro-blue),
+        0 0 82px var(--retro-blue), 0 0 92px var(--retro-blue), 0 0 102px var(--retro-blue), 0 0 151px var(--retro-blue);
+    margin: 16px 0;
+}
+
+#v-eight {
+    color: lightpink;
+    text-shadow: 0 0 7px hotpink, 0 0 10px hotpink, 0 0 21px hotpink, 0 0 42px hotpink, 0 0 82px hotpink, 0 0 92px hotpink, 0 0 102px hotpink, 0 0 151px hotpink;
+}
+
+#flos {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--retro-light-blue);
+    background-color: transparent;
+    border: 1px solid var(--retro-blue);
+    border-radius: 8px;
+    font-family: "Aurach";
+    padding: 8px 16px;
+    min-width: 64px;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--retro-blue);
+    border-radius: 8px;
+    filter: blur(8px);
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+button:hover {
+    color: #0d0d0d;
+    background-color: var(--retro-blue);
+    box-shadow: 0 0 20px var(--retro-blue), 0 0 40px var(--retro-blue), 0 0 60px var(--retro-blue);
+}
+
+.active {
+    color: lightpink;
+    border: 1px solid hotpink;
+}
+
+.active::before {
+    background: hotpink;
+}
+
+.active:hover {
+    color: #0d0d0d;
+    background-color: hotpink;
+    box-shadow: 0 0 20px hotpink, 0 0 40px hotpink, 0 0 60px hotpink;
+}
+
+/* END Header */
+
+/* Homepage */
+
+#homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    text-align: center;
+}
+
+.slogan {
+    color: var(--retro-light-blue);
+    font-family: "Aurach";
+    font-size: 24px;
+    font-style: italic;
+}
+
+#homepage img {
+    border: 1px solid var(--retro-blue);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* END Homepage */
+
+/* Menu */
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+
+    margin: 0 96px;
+}
+
+#menu img {
+    border: 1px solid var(--retro-blue);
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    width: 200px;
+    height: auto;
+}
+
+.menu-desc {
+    color: var(--bg);
+    background-color: var(--retro-blue);
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    font-family: sans-serif;
+    text-align: center;
+    white-space: pre;
+    padding: 8px 0;
+}
+
+/* END Menu */
+
+/* About */
+
+#about {
+    border: 1px solid var(--retro-blue);
+    border-radius: 8px;
+}
+
+/* END About */
